@@ -19,7 +19,10 @@ var isGuessingLetter = true; // set to false to guess solution
 // guessing. If they are guessing the word, then set the word
 // as their guess.
 
-var guess = 'A'; // UPPERCASE
+var guess = 'D'; // UPPERCASE
+
+var n = word.includes(guess);
+var totalChar = word.length;
 
 // SCRIPT ////////////////////////////////////////////////////////////
 
@@ -29,9 +32,29 @@ var guess = 'A'; // UPPERCASE
 
 		// Print back the word with all instances of that letter revealed.
 
+if (isGuessingLetter == true) {
+	if (n == true) {
+		var x = 0
+		for (x = 0 ; x < totalChar ; x++) {
+			var i = word.charAt(x);
+			if (i==guess) {
+				console.log(guess)
+			}
+		 	if (i!=guess) {
+			 	console.log("_")
+			};
+					
+		}
+
+	}
 	// If the word does not contain the letter...
 
 		// Print back "Sorry, no <letter>!" but with <letter> replaced by the player's guess.
+
+	else {
+		console.log("Sorry, no",guess+"!" ); }
+	}	
+
 
 // If guessing the word...
 
@@ -43,4 +66,11 @@ var guess = 'A'; // UPPERCASE
 
 		// Print back "Nope, keep trying!"
 
+if (isGuessingLetter == false) {
+	if (guess == word) {
+		console.log("Congratulations! You won Wheel of Fortune!");	
+	} else { 
+		console.log("Nope, keep trying!");
+	}
+};
 // End of script!
